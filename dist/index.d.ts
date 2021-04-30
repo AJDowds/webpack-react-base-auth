@@ -1,7 +1,10 @@
 import * as React from "react";
 import "./styles.scss";
+import { AuthSaga } from "./Auth/AuthSaga";
+import { AuthSlice } from "./Auth/AuthSlice";
 export declare type ICounterProps = {
-    className?: string;
+    authSlice: any;
+    test: any;
 };
-declare const App: React.FC<ICounterProps>;
-export default App;
+declare const Testo: React.FC<ICounterProps>;
+export { Testo, AuthSlice, AuthSaga };
