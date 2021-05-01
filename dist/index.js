@@ -294,8 +294,8 @@ var AuthSaga = [
 ];
 
 var Testo = function () {
-    console.log("!!Hello");
     console.log("!!AuthSlice", AuthSlice);
+    console.log("!!AuthSaga", AuthSaga);
     return (React__namespace.createElement("div", null,
         React__namespace.createElement("h1", null, "My Auth Library")));
 };

@@ -3,14 +3,13 @@ import "./styles.scss";
 import { AuthSaga } from "./Auth/AuthSaga";
 import { AuthSlice } from "./Auth/AuthSlice";
 
-export type ICounterProps = {
-  authSlice: any;
+export type ITestoProps = {
   test: any;
 };
 
-const Testo: React.FC<ICounterProps> = () => {
-  console.log("!!Hello");
+const Testo: React.FC<ITestoProps> = () => {
   console.log("!!AuthSlice", AuthSlice);
+  console.log("!!AuthSaga", AuthSaga);
 
   return (
     <div>
