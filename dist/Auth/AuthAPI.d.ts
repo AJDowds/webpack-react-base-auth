@@ -1,11 +1,11 @@
-export interface APIInterface {
-    authUrl: string;
-    APIUrl: string;
-}
-export declare const baseApi: APIInterface;
-export declare const apiHelper: object;
 export interface AuthAPIInterface {
+    getUserDetails(data: any): Promise<object>;
     postLogin(data: any): Promise<object>;
     postRegister(data: any): Promise<object>;
+    putChangeDetails(data: any): Promise<object>;
+    putChangePassword(data: any): Promise<object>;
+    postChangeEmail(data: any): Promise<object>;
+    postForgotPassword(data: any): Promise<object>;
+    postResetPassword(data: any): Promise<object>;
 }
 export declare const AuthAPI: AuthAPIInterface;
