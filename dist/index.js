@@ -1,19 +1,14 @@
 
 
 function ___$insertStyle(css) {
-  if (!css) {
-    return;
-  }
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  var style = document.createElement('style');
-
-  style.setAttribute('type', 'text/css');
-  style.innerHTML = css;
-  document.head.appendChild(style);
-  return css;
+    if (!css || typeof window === 'undefined') {
+        return;
+    }
+    const style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
+    style.innerHTML = css;
+    document.head.appendChild(style);
+    return css;
 }
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -31,14 +26,12 @@ function _interopNamespace(e) {
         var d = Object.getOwnPropertyDescriptor(e, k);
         Object.defineProperty(n, k, d.get ? d : {
           enumerable: true,
-          get: function () {
-            return e[k];
-          }
+          get: function () { return e[k]; }
         });
       }
     });
   }
-  n['default'] = e;
+  n["default"] = e;
   return Object.freeze(n);
 }
 
@@ -113,10 +106,10 @@ function __generator(thisArg, body) {
 var baseUrl = "https://api.dowcodeploy.com/api";
 var baseApi = {
     get authUrl() {
-        return baseUrl + "/auth";
+        return "".concat(baseUrl, "/auth");
     },
     get APIUrl() {
-        return "" + baseUrl;
+        return "".concat(baseUrl);
     },
 };
 var AuthAPI = {
@@ -124,7 +117,7 @@ var AuthAPI = {
         return __awaiter(this, void 0, void 0, function () {
             var postLoginUrl;
             return __generator(this, function (_a) {
-                postLoginUrl = baseApi.authUrl + "/login";
+                postLoginUrl = "".concat(baseApi.authUrl, "/login");
                 //console.log('[URL FOR postLogin]', postLoginUrl);
                 return [2 /*return*/, fetch(postLoginUrl, {
                         method: "POST",
@@ -139,7 +132,7 @@ var AuthAPI = {
         return __awaiter(this, void 0, void 0, function () {
             var postRegisterUrl;
             return __generator(this, function (_a) {
-                postRegisterUrl = baseApi.authUrl + "/register";
+                postRegisterUrl = "".concat(baseApi.authUrl, "/register");
                 //console.log('[URL FOR postRegister]', postRegisterUrl);
                 return [2 /*return*/, fetch(postRegisterUrl, {
                         method: "POST",
@@ -293,11 +286,14 @@ var AuthSaga = [
     effects.takeLatest(register, registerEffect),
 ];
 
-var Testo = function () {
+var Testo = function (_a) {
+    var title = _a.title;
     console.log("!!AuthSlice", AuthSlice);
     console.log("!!AuthSaga", AuthSaga);
     return (React__namespace.createElement("div", null,
-        React__namespace.createElement("h1", null, "My Auth Library")));
+        React__namespace.createElement("h1", null,
+            "My Auth Library + ",
+            title)));
 };
 
 exports.AuthSaga = AuthSaga;

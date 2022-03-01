@@ -4,16 +4,16 @@ import { AuthSaga } from "./Auth/AuthSaga";
 import { AuthSlice } from "./Auth/AuthSlice";
 
 export type ITestoProps = {
-  test: any;
+  title?: string;
 };
 
-const Testo: React.FC<ITestoProps> = () => {
+const Testo: React.FC<ITestoProps> = ({ title }) => {
   console.log("!!AuthSlice", AuthSlice);
   console.log("!!AuthSaga", AuthSaga);
 
   return (
     <div>
-      <h1>My Auth Library</h1>
+      <h1>My Auth Library + {title}</h1>
     </div>
   );
 };
